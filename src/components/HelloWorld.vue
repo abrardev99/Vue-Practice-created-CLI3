@@ -1,9 +1,10 @@
 <template>
   <div id="app">
     <h1>{{ msg }}</h1>
-    <button @click="fetchData">Fetch All Data</button>
+    <h3>Home Route</h3>
+    <!-- <button @click="fetchData">Fetch All Data</button>
     <button @click="fetchSpecificData">Fetch Specific</button>
-    <button @click="saveData">Save Data</button>
+    <button @click="saveData">Save Data</button>-->
   </div>
 </template>
 
@@ -45,10 +46,10 @@ export default {
           console.log(res.data);
         });
     }
-  },
-
-  mounted() {
-    console.log(process.env.VUE_APP_USER_BASE_URL);
   }
+
+  // mounted() {
+  //   console.log(process.env.VUE_APP_USER_BASE_URL);
+  // }
 };
 </script>
