@@ -1,3 +1,5 @@
+Project created by vue cli 3. 
+
 # vue-practice-created-cli3
 
 ## Project setup
