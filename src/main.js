@@ -3,6 +3,7 @@ import App from './App.vue'
 import AppRoute from 'vue-router';
 // import the routes that we created
 import { routes } from './routes.js'
+import { store } from './store/store.js'
 
 Vue.use(AppRoute);
 // here binding our routes with vue-route lib
@@ -21,4 +22,5 @@ new Vue({
   // then passs that created router to vue instance
   router,
   // or router: router
+  store,
 }).$mount('#app')

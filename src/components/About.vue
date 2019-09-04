@@ -2,6 +2,7 @@
   <div class="app">
     <h3>About Our Website</h3>
     <p>Passed ID: {{ id }}</p>
+    <p>User Email: {{ getEmail }}</p>
     <button @click="goHome" class="btn btn-primary">Go Home</button>
     <hr />
     <li class="nav-item">
@@ -14,7 +15,8 @@
 export default {
   data() {
     return {
-      id: this.$route.params.id
+      id: this.$route.params.id,
+  
     };
   },
   // vue does not re-create component when we load same component with different id, like user/10, user/11.
@@ -29,6 +31,12 @@ export default {
   methods: {
     goHome() {
       this.$router.push("/");
+    }
+  },
+
+  computed: {
+    getEmail() {
+      return this.$store.getters.getEmail;
     }
   }
 };

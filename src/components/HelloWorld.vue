@@ -2,6 +2,9 @@
   <div id="app">
     <h1>{{ msg }}</h1>
     <h3>Home Route</h3>
+    <p>User Email: {{ getEmail }}</p>
+    <br />
+    <button @click="updateEmail('update@gmail.com')">Update Email</button>
     <!-- <button @click="fetchData">Fetch All Data</button>
     <button @click="fetchSpecificData">Fetch Specific</button>
     <button @click="saveData">Save Data</button>-->
@@ -45,11 +48,22 @@ export default {
         .then(res => {
           console.log(res.data);
         });
+    },
+
+    // updating email in store
+    updateEmail(updatedEmail) {
+      // well this will not work, we have to make mutations so called getter
+      // this.$store.state.email = "updated@gmail.com";
+
+      this.$store.commit("setEmail", updatedEmail);
+    }
+  },
+
+  // should fetch data from store in computed propertie to behaview reactivily
+  computed: {
+    getEmail() {
+      return this.$store.getters.getEmail;
     }
   }
-
-  // mounted() {
-  //   console.log(process.env.VUE_APP_USER_BASE_URL);
-  // }
 };
 </script>
