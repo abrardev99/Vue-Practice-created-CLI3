@@ -4,7 +4,7 @@
     <h3>Home Route</h3>
     <p>User Email: {{ getEmail }}</p>
     <br />
-    <button @click="updateEmail('update@gmail.com')">Update Email</button>
+    <button @click="fecthEmail">Update Email</button>
     <!-- <button @click="fetchData">Fetch All Data</button>
     <button @click="fetchSpecificData">Fetch Specific</button>
     <button @click="saveData">Save Data</button>-->
@@ -56,6 +56,10 @@ export default {
       // this.$store.state.email = "updated@gmail.com";
 
       this.$store.commit("setEmail", updatedEmail);
+    },
+
+    fecthEmail() {
+      this.$store.dispatch("setEmailFromServer");
     }
   },
 
